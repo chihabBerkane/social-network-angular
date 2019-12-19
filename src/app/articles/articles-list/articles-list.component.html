@@ -1,0 +1,10 @@
+<div *ngFor="let article of articles | async">
+  <mat-card>
+    <mat-card-title style="cursor: pointer;" [routerLink]="['/articles', article.idArticle]"
+    routerLinkActive="router-link-active">
+      Par {{article.member.firstName}} {{article.member.firstName}}, posté le {{article.posted | date }}
+    </mat-card-title>
+    <mat-card-content> {{article.bodyMessage}} </mat-card-content>
+    <mat-icon style="cursor:pointer" (click)="openDialog()">question_answer</mat-icon> {{article.comments.length}}
+  </mat-card>
+</div>

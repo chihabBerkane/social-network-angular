@@ -1,0 +1,14 @@
+<div *ngFor="let user of users | async">
+
+  <!-- All users -->
+  <mat-card>
+    <span *ngIf="user.connected === false">
+      <mat-icon  style="color: darkred;">account_circle</mat-icon> <small>utilisateur non connecté</small>
+    </span>
+    <p> Prenom : {{user.firstName }} </p>
+    <p> Nom de famille : {{user.lastName}} </p>
+  </mat-card>
+
+
+</div>
+
